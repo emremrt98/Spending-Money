@@ -1,0 +1,103 @@
+@import "mix";
+
+* {
+    @include reset;
+}
+
+.hizala {
+    margin: 50px 100px;
+}
+
+.header {
+    @include align;
+    height: 50px;
+    background-color: rgb(153, 255, 0);
+}
+
+.production {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.product {
+    @include align;
+    width: 300px;
+    border: 1px solid gray;
+
+    .img {
+        padding: 20px 0;
+
+        img {
+            width: 200px;
+        }
+    }
+
+    .info {
+        margin: 20px 0;
+
+        p {
+            color: green;
+            margin: 10px 0;
+        }
+    }
+
+    .btn {
+        margin: 20px 0;
+        @include align;
+
+        button {
+            width: 100px;
+            padding: 8px;
+            @include btn
+        }
+
+        .buy {
+            background-color: rgb(2, 204, 204);
+        }
+
+        p {
+            border: 1px solid gray;
+            padding: 3.5px 10px;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.card {
+    width: 95%;
+    padding: 20px;
+    margin-top: 50px;
+    border: 1px solid gray;
+
+    .card-header {
+        border-bottom: 1px solid gray;
+
+        p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+    }
+
+    .card-btn {
+        margin-top: 20px;
+        @include align;
+        justify-content: space-between;
+
+        button {
+            width: 150px;
+            background-color: rgb(2, 204, 204);
+            @include btn;
+            padding: 10px;
+            font-size: 1.2rem;
+
+            &:active {
+                transform: scale(.8);
+            }
+        }
+
+        h2 {
+            color: green;
+        }
+    }
+}

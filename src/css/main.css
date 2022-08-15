@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hizala {
+  margin: 50px 100px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  background-color: rgb(153, 255, 0);
+}
+
+.production {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  border: 1px solid gray;
+}
+.product .img {
+  padding: 20px 0;
+}
+.product .img img {
+  width: 200px;
+}
+.product .info {
+  margin: 20px 0;
+}
+.product .info p {
+  color: green;
+  margin: 10px 0;
+}
+.product .btn {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product .btn button {
+  width: 100px;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+}
+.product .btn .buy {
+  background-color: rgb(2, 204, 204);
+}
+.product .btn p {
+  border: 1px solid gray;
+  padding: 3.5px 10px;
+  font-size: 1.2rem;
+}
+
+.card {
+  width: 95%;
+  padding: 20px;
+  margin-top: 50px;
+  border: 1px solid gray;
+}
+.card .card-header {
+  border-bottom: 1px solid gray;
+}
+.card .card-header p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+.card .card-btn {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+}
+.card .card-btn button {
+  width: 150px;
+  background-color: rgb(2, 204, 204);
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+.card .card-btn button:active {
+  transform: scale(0.8);
+}
+.card .card-btn h2 {
+  color: green;
+}
