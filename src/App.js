@@ -3,73 +3,72 @@ import Header from './components/header';
 import Product from './components/product';
 import Card from './components/card';
 import { faker } from '@faker-js/faker';
+import { useState } from 'react';
 
 function App() {
-
+  const [totalPrice, setTotalPrice] = useState(5000);
   const production = [
     {
       name: faker.commerce.product(),
-      price: faker.commerce.price(100, 2000, 0, '$'),
-      img: faker.image.fashion()
+      price: faker.commerce.price(100, 2000),
+      img: faker.image.animals(480, 640, true) 
     },
     {
       name: faker.commerce.product(),
-      price: faker.commerce.price(100, 2000, 0, '$'),
-      img: faker.image.fashion()
+      price: faker.commerce.price(100, 2000),
+      img: faker.image.animals(480, 640, true) 
     },
     {
       name: faker.commerce.product(),
-      price: faker.commerce.price(100, 2000, 0, '$'),
-      img: faker.image.fashion()
+      price: faker.commerce.price(100, 2000),
+      img: faker.image.animals(480, 640, true) 
     },
     {
       name: faker.commerce.product(),
-      price: faker.commerce.price(100, 2000, 0, '$'),
-      img: faker.image.fashion()
+      price: faker.commerce.price(100, 2000),
+      img: faker.image.animals(480, 640, true) 
     },
     {
       name: faker.commerce.product(),
-      price: faker.commerce.price(100, 2000, 0, '$'),
-      img: faker.image.fashion()
+      price: faker.commerce.price(100, 2000),
+      img: faker.image.animals(480, 640, true) 
     },
     {
       name: faker.commerce.product(),
-      price: faker.commerce.price(100, 2000, 0, '$'),
-      img: faker.image.fashion()
+      price: faker.commerce.price(100, 2000),
+      img: faker.image.animals(480, 640, true) 
     },
     {
       name: faker.commerce.product(),
-      price: faker.commerce.price(100, 2000, 0, '$'),
-      img: faker.image.fashion()
+      price: faker.commerce.price(100, 2000),
+      img: faker.image.animals(480, 640, true) 
     },
     {
       name: faker.commerce.product(),
-      price: faker.commerce.price(100, 2000, 0, '$'),
-      img: faker.image.fashion()
+      price: faker.commerce.price(100, 2000),
+      img: faker.image.animals(480, 640, true) 
     },
     {
       name: faker.commerce.product(),
-      price: faker.commerce.price(100, 2000, 0, '$'),
-      img: faker.image.fashion()
+      price: faker.commerce.price(100, 2000),
+      img: faker.image.animals(480, 640, true) 
     },
     {
       name: faker.commerce.product(),
-      price: faker.commerce.price(100, 2000, 0, '$'),
-      img: faker.image.fashion()
+      price: faker.commerce.price(100, 2000),
+      img: faker.image.animals(480, 640, true) 
     }
   ]
 
-
-  console.log(production);
   return (
     <div className="App">
-      <Header />
+      <Header totalPrice={totalPrice}/>
       <div className='hizala'>
         <div className='production'>
           {
             production.map((data, index) => (
               <div key={index}>
-                <Product name={data.name} price={data.price} img={data.img} />
+                <Product name={data.name} price={data.price} img={data.img} totalPrice={totalPrice} setTotalPrice={setTotalPrice} />
               </div>)
             )}
 
