@@ -3,14 +3,19 @@ import { useState } from "react";
 export default function Product({ name, price, img, totalPrice, setTotalPrice }) {
     const [count, setCount] = useState(0);
     const spellMoney = (price) => {
-        setTotalPrice(totalPrice - (Number(price)));
-        setCount(count + 1)
+        if ((totalPrice - (Number(price)) <= 0)) {
+            alert("Your money is not enough")
+        }
+        else {
+            setTotalPrice(totalPrice - (Number(price)));
+            setCount(count + 1)
+        }
     }
     return (
         <div className="product">
             <div>
                 <div className="img">
-                    <img src={img} ></img>
+                    <img src={img}/>
                 </div>
                 <div className="info">
                     <h3>{name}</h3>
