@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function Product({ name, price, img, totalPrice, setTotalPrice, setMyProduct, total, setTotal }) {
     const [count, setCount] = useState(0);
-
+    const [count2, setCount2] = useState(1);
     const selling = price => {
         setTotalPrice(totalPrice += price);
         setCount(count - 1)
@@ -14,13 +14,11 @@ export default function Product({ name, price, img, totalPrice, setTotalPrice, s
         else {
             setTotalPrice(totalPrice - (Number(price)));
             setCount(count + 1);
-            setMyProduct(prevList => ([...prevList, { ...prevList, name, price }]));
+            setCount2(count2 + 1);
+            setMyProduct(prevList => ([...prevList, { ...prevList, name, price, count2 }]));
             setTotal(total + price);
         }
     }
-
-
-
 
     return (
         <div className="product">
@@ -33,6 +31,7 @@ export default function Product({ name, price, img, totalPrice, setTotalPrice, s
                     <p>{price}</p>
                 </div>
                 <div className="btn">
+
                     {count ? <button onClick={() => selling(price)} className="sell">Sat</button> : <button className="sell" disabled>Sat</button>}
                     <p>{count}</p>
                     <button onClick={(e) => {
