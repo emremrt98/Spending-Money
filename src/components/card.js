@@ -1,5 +1,5 @@
 
-export default function Card({ myProduct }) {
+export default function Card({ myProduct, total }) {
 
     console.log(myProduct);
 
@@ -17,7 +17,7 @@ export default function Card({ myProduct }) {
             </div>
             <div className="card-btn">
                 <button>Sepeti Sıfırla</button>
-                <h2>Toplam $0</h2>
+                <h2>Toplam ${total}</h2>
             </div>
         </div>
     )

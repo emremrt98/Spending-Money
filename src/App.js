@@ -7,7 +7,7 @@ import { useState } from 'react';
 function App() {
   const [totalPrice, setTotalPrice] = useState(10000000);
   const [myProduct, setMyProduct] = useState([]);
-
+  const [total, setTotal] = useState(0);
   const production = [
     {
       name: "Hp Omen 15 Series",
@@ -76,15 +76,16 @@ function App() {
                   img={data.img}
                   totalPrice={totalPrice}
                   setTotalPrice={setTotalPrice}
-                  myProduct={myProduct}
                   setMyProduct={setMyProduct}
+                  total={total}
+                  setTotal={setTotal}
                 />
               </div>)
             )}
 
         </div>
         <div>
-          <Card myProduct={myProduct} />
+          <Card myProduct={myProduct} total={total} />
         </div>
       </div>
 

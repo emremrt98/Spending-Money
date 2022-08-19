@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Product({ name, price, img, totalPrice, setTotalPrice, setMyProduct, myProduct }) {
+export default function Product({ name, price, img, totalPrice, setTotalPrice, setMyProduct, total, setTotal }) {
     const [count, setCount] = useState(0);
 
     const selling = price => {
@@ -13,8 +13,9 @@ export default function Product({ name, price, img, totalPrice, setTotalPrice, s
         }
         else {
             setTotalPrice(totalPrice - (Number(price)));
-            setCount(count + 1)
-            setMyProduct(prevList => ([...prevList, { ...prevList, name, price }]))
+            setCount(count + 1);
+            setMyProduct(prevList => ([...prevList, { ...prevList, name, price }]));
+            setTotal(total + price);
         }
     }
 
