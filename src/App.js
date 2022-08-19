@@ -2,11 +2,12 @@ import './css/main.css';
 import Header from './components/header';
 import Product from './components/product';
 import Card from './components/card';
-import { faker } from '@faker-js/faker';
 import { useState } from 'react';
 
 function App() {
   const [totalPrice, setTotalPrice] = useState(10000000);
+  const [myProduct, setMyProduct] = useState([]);
+
   const production = [
     {
       name: "Hp Omen 15 Series",
@@ -58,7 +59,7 @@ function App() {
       price: 4800,
       img: "https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c06611674.png"
     }
-  ]
+  ];
 
   return (
     <div className="App">
@@ -69,13 +70,21 @@ function App() {
           {
             production.map((data, index) => (
               <div key={index}>
-                <Product name={data.name} price={data.price} img={data.img} totalPrice={totalPrice} setTotalPrice={setTotalPrice} />
+                <Product
+                  name={data.name}
+                  price={data.price}
+                  img={data.img}
+                  totalPrice={totalPrice}
+                  setTotalPrice={setTotalPrice}
+                  myProduct={myProduct}
+                  setMyProduct={setMyProduct}
+                />
               </div>)
             )}
 
         </div>
         <div>
-          <Card />
+          <Card myProduct={myProduct} />
         </div>
       </div>
 
