@@ -8,6 +8,7 @@ function App() {
   const [totalPrice, setTotalPrice] = useState(10000000);
   const [myProduct, setMyProduct] = useState([]);
   const [total, setTotal] = useState(0);
+
   const production = [
     {
       id: 1,
@@ -104,7 +105,7 @@ function App() {
 
         </div>
         <div>
-          <Card myProduct={myProduct} total={total} />
+          <Card myProduct={myProduct} setMyProduct={setMyProduct} total={total} setTotal={setTotal} />
         </div>
       </div>
 

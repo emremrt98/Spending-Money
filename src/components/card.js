@@ -1,7 +1,10 @@
 
-export default function Card({ myProduct, total }) {
+export default function Card({ myProduct, setMyProduct, total, setTotal, }) {
 
-
+    const reset = () => {
+        setMyProduct([]);
+        setTotal(0);
+    }
 
     return (
         <div className="card">
@@ -16,7 +19,7 @@ export default function Card({ myProduct, total }) {
                 </ul>
             </div>
             <div className="card-btn">
-                <button>Sepeti Sıfırla</button>
+                <button onClick={() => reset()}>Sepeti Sıfırla</button>
                 <h2>Toplam ${total}</h2>
             </div>
         </div>
