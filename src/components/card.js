@@ -1,7 +1,7 @@
 
 export default function Card({ myProduct, total }) {
 
-    console.log(myProduct);
+
 
     return (
         <div className="card">
@@ -10,7 +10,7 @@ export default function Card({ myProduct, total }) {
                 <ul>
                     {
                         myProduct.map((product, index) => (
-                            <li style={{ listStyle: "none", margin: 10 }} key={index}>{product.name} x{product.count2}</li>
+                            <li style={{ listStyle: "none", margin: 10 }} key={index}>{product.name} x{product.amount}</li>
                         ))
                     }
                 </ul>

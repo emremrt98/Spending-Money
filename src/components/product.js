@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Product({ name, price, img, totalPrice, setTotalPrice, setMyProduct, total, setTotal }) {
+export default function Product({ data: { name, price, img, amount, id }, totalPrice, setTotalPrice, myProduct, setMyProduct, total, setTotal }) {
     const [count, setCount] = useState(0);
     const [count2, setCount2] = useState(1);
     const selling = price => {
@@ -12,10 +12,16 @@ export default function Product({ name, price, img, totalPrice, setTotalPrice, s
             alert("Your money is not enough")
         }
         else {
+            const control = myProduct.find(data => data.id === id);
+            if (control) {
+                control.amount += 1;
+                setMyProduct([...myProduct.filter(data => data.id !== id), control]);
+            } else {
+                setMyProduct(prevList => ([...prevList, { ...prevList, name, price, amount, id }]));
+            }
+
             setTotalPrice(totalPrice - (Number(price)));
             setCount(count + 1);
-            setCount2(count2 + 1);
-            setMyProduct(prevList => ([...prevList, { ...prevList, name, price, count2 }]));
             setTotal(total + price);
         }
     }
