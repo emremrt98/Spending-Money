@@ -46,7 +46,9 @@ export default function Product({ data: { name, price, img, amount, id }, totalP
                         className="buy">Satın Al</button>
                 </div>
             </div>
+           
         </div>
+        
     );
 }
 

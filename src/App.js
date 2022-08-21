@@ -105,7 +105,7 @@ function App() {
 
         </div>
         <div>
-          <Card myProduct={myProduct} setMyProduct={setMyProduct} total={total} setTotal={setTotal} />
+          <Card myProduct={myProduct} setMyProduct={setMyProduct} total={total} setTotal={setTotal} setTotalPrice={setTotalPrice} />
         </div>
       </div>
 

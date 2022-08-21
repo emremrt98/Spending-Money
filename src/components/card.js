@@ -1,9 +1,10 @@
 
-export default function Card({ myProduct, setMyProduct, total, setTotal, }) {
+export default function Card({ myProduct, setMyProduct, total, setTotal, setTotalPrice }) {
 
     const reset = () => {
         setMyProduct([]);
         setTotal(0);
+        setTotalPrice(10000000)
     }
 
     return (
